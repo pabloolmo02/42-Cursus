@@ -6,9 +6,11 @@
 /*   By: polmo-lo <polmo-lo@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 12:20:46 by polmo-lo          #+#    #+#             */
-/*   Updated: 2024/04/15 12:42:05 by polmo-lo         ###   ########.fr       */
+/*   Updated: 2024/04/25 11:27:57 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {

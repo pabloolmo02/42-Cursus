@@ -6,11 +6,13 @@
 /*   By: polmo-lo <polmo-lo@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 12:54:31 by polmo-lo          #+#    #+#             */
-/*   Updated: 2024/04/15 13:11:06 by polmo-lo         ###   ########.fr       */
+/*   Updated: 2024/04/25 11:28:37 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isdigit(int c)
 {
-	return (c >= '0' && c <= '9');
+	return  (c >= '0' && c <= '9');
 }

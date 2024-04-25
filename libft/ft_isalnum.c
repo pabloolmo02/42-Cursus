@@ -6,10 +6,12 @@
 /*   By: polmo-lo <polmo-lo@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 13:30:22 by polmo-lo          #+#    #+#             */
-/*   Updated: 2024/04/15 13:52:10 by polmo-lo         ###   ########.fr       */
+/*   Updated: 2024/04/25 11:31:29 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {
-	return ((ft_isalpha(c)) || (ft_isdigit(c)));	}
+	return (ft_isalpha(c) || ft_isdigit(c));
+}

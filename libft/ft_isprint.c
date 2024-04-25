@@ -6,11 +6,13 @@
 /*   By: polmo-lo <polmo-lo@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 13:39:54 by polmo-lo          #+#    #+#             */
-/*   Updated: 2024/04/15 13:44:33 by polmo-lo         ###   ########.fr       */
+/*   Updated: 2024/04/25 11:29:51 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isprint(int c)
 {
-	return (c < 32 && c > 127);
+	return (c > 32 && c < 127);
 }
