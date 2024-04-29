@@ -19,6 +19,14 @@ FILES = \
 		ft_isprint.c\
 		ft_isascii.c\
 		ft_isalnum.c\
+		ft_tolower.c\
+		ft_toupper.c\
+		ft_strlen.c\
+		ft_strlcpy.c\
+		ft_strlcat.c\
+		ft_strchr.c\
+		ft_strrchr.c\
+
 
 OBJ = $(FILES:.c=.o)
 

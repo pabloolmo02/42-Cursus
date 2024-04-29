@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: polmo-lo <polmo-lo@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/27 15:43:34 by polmo-lo          #+#    #+#             */
-/*   Updated: 2024/04/29 15:20:24 by polmo-lo         ###   ########.fr       */
+/*   Created: 2024/04/27 19:03:08 by polmo-lo          #+#    #+#             */
+/*   Updated: 2024/04/29 15:03:27 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t destsize )
+int	ft_tolower(int c)
 {
-	size_t	i;
-	size_t	j;
-
-	i = ft_strlen(dest);
-	j = 0;
-	if (destsize <= i)
-		return (destsize + ft_strlen(src));
-	while (src[j] && i + 1 < destsize)
+	if (c >= 'A' && c <= 'Z')
 	{
-		dest[i] = src[j];
-		i++;
-		j++;
+		c = c + 32;
 	}
-	dest[i] = '\0';
-	return (i + ft_strlen(&src[j]));
+	return (c);
 }

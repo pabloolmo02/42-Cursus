@@ -6,7 +6,7 @@
 /*   By: polmo-lo <polmo-lo@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:42:32 by polmo-lo          #+#    #+#             */
-/*   Updated: 2024/04/27 17:54:25 by polmo-lo         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:39:44 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ char	*ft_strrchr(const char *str, int c)
 	size_t	i;
 
 	i = ft_strlen(str) + 1;
-	while (i >= 0)
+	while (i--)
 	{
-		if (str[i] == c)
+		if (str[i] == (char)c)
 		{
-			return ((char *)s);
+			return ((char *) &str[i]);
 		}
-		i--;
 	}
+	return (NULL);
 }

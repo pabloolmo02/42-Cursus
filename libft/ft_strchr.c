@@ -6,17 +6,21 @@
 /*   By: polmo-lo <polmo-lo@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 16:57:47 by polmo-lo          #+#    #+#             */
-/*   Updated: 2024/04/27 17:29:59 by polmo-lo         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:46:12 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	while (*s && c != *s)
+	while (*s != (char)c)
+	{
+		if (*s == 0)
+		{
+			return (NULL);
+		}
 		s++;
-	if (c == *s)
-		return ((char *)s);
-	return (0);
+	}
+	return ((char *)s);
 }

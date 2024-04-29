@@ -6,7 +6,7 @@
 /*   By: polmo-lo <polmo-lo@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 15:47:15 by polmo-lo          #+#    #+#             */
-/*   Updated: 2024/04/27 15:47:38 by polmo-lo         ###   ########.fr       */
+/*   Updated: 2024/04/29 16:05:02 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,16 @@
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	i;
-	size_t	j;
 
 	i = 0;
-	j = 0;
-	if (!dest || !src)
-		return (0);
-	while (src[i])
-		i++;
-	while (src(j) && j + 1 < size)
-		dest[i] = src[i];
-	i++;
-	if (size)
+	if (size > 0)
+	{
+		while (src[i] && i < (size -1))
+		{
+			dest[i] = src[i];
+			i++;
+		}
 		dest[i] = '\0';
-	return (i);
+	}
+	return (ft_strlen(src));
 }
