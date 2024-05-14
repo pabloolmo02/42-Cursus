@@ -6,7 +6,7 @@
 #    By: polmo-lo <polmo-lo@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 14:14:17 by polmo-lo          #+#    #+#              #
-#    Updated: 2024/04/25 11:06:07 by polmo-lo         ###   ########.fr        #
+#    Updated: 2024/05/14 16:47:25 by polmo-lo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,14 @@ FILES = \
 		ft_strlcat.c\
 		ft_strchr.c\
 		ft_strrchr.c\
-
+		ft_strncmp.c\
+		ft_strnstr.c\
+		ft_memset.c\
+		ft_bzero.c\
+		ft_memcpy.c\
+		ft_memchr.c\
+		ft_memcmp.c\
+		ft_memmove.c\
 
 OBJ = $(FILES:.c=.o)
 
