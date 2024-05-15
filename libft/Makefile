@@ -6,7 +6,7 @@
 #    By: polmo-lo <polmo-lo@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 14:14:17 by polmo-lo          #+#    #+#              #
-#    Updated: 2024/05/14 16:47:25 by polmo-lo         ###   ########.fr        #
+#    Updated: 2024/05/15 19:05:40 by polmo-lo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ FILES = \
 		ft_memchr.c\
 		ft_memcmp.c\
 		ft_memmove.c\
+		ft_atoi.c\
 
 OBJ = $(FILES:.c=.o)
 

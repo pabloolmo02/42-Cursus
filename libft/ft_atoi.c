@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: polmo-lo <polmo-lo@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/14 15:04:11 by polmo-lo          #+#    #+#             */
-/*   Updated: 2024/05/15 19:49:06 by polmo-lo         ###   ########.fr       */
+/*   Created: 2024/05/15 14:47:40 by polmo-lo          #+#    #+#             */
+/*   Updated: 2024/05/15 19:51:49 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_atoi(const char *str)
 {
-	unsigned char	*str;
-	unsigned char	goal;
-	size_t			i;
+	long int	i;
+	long int	sign;
+	long int	num;
 
 	i = 0;
-	str = (unsigned char *)s;
-	goal = (unsigned char)c;
-	while (i < n)
+	sign = 1;
+	num = 0;
+	while (str[i] && (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13)))
+		i++;
+	if (str[i] == '+' && str[i + 1] != '-')
+		i++;
+	if (str[i] == '-')
 	{
-		if (str [i] == goal)
-			return (&str[i]);
+		sign = -1;
 		i++;
 	}
-	return (NULL);
+	while (str[i] != '\0' && ft_isdigit(str[i]))
+	{
+		num = (num * 10) + (str[i] - 48);
+		i++;
+	}
+	return (num * sign);
 }
