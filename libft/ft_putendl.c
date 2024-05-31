@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: polmo-lo <polmo-lo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/25 12:09:04 by polmo-lo          #+#    #+#             */
-/*   Updated: 2024/05/29 13:35:49 by polmo-lo         ###   ########.fr       */
+/*   Created: 2024/05/31 13:29:11 by polmo-lo          #+#    #+#             */
+/*   Updated: 2024/05/31 13:30:32 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+void ft_putendl_fd(char *s, int fd)
 {
-	char	*str;
-	int		start;
-	int		end;
+	int i;
 
-	start = 0;
-	if (!s1)
-		return (ft_strdup(""));
-	end = ft_strlen(s1);
-	while (ft_strchr(set, s1[start]))
-		start++;
-	while (ft_strchr(set, s1[end]))
-		end--;
-	str = ft_substr (s1, start, (end - start) + 1);
-	return (str);
+	i = 0;
+	while (s[i] != '\0')
+	{	
+		write(fd, s[i], 1);
+		i++;
+	}
+	write(fd, '\n', 1);
 }

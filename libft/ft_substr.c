@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polmo-lo <polmo-lo@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: polmo-lo <polmo-lo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:58:55 by polmo-lo          #+#    #+#             */
-/*   Updated: 2024/05/27 10:49:00 by polmo-lo         ###   ########.fr       */
+/*   Updated: 2024/05/29 13:31:04 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	char *substr;
+	char	*substr;
 	size_t	s_len;
 
 	if (!s)
@@ -22,11 +22,11 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	s_len = ft_strlen(s);
 	if (start >= s_len)
 	{
-	substr = (char *)malloc(1);
-	if (!substr)
-		return (NULL);
-	substr[0] = 0;
-	return (substr);
+		substr = (char *)malloc(1);
+		if (!substr)
+			return (NULL);
+		substr[0] = 0;
+		return (substr);
 	}
 	if (len > s_len - start)
 	{

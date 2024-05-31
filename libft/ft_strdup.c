@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polmo-lo <polmo-lo@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: polmo-lo <polmo-lo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:37:31 by polmo-lo          #+#    #+#             */
-/*   Updated: 2024/05/24 12:52:17 by polmo-lo         ###   ########.fr       */
+/*   Updated: 2024/05/29 13:32:18 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 char	*strdup(const char *s1)
 {
 	char	*string;
-	int	i;
+	int		i;
 
 	i = 0;
 	string = (char *)malloc(sizeof(char) * ft_strlen(s1)+1);
-	if(!string)
+	if (!string)
 		return (NULL);
 	while (s1[i] != 0)
 	{

@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: polmo-lo <polmo-lo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/25 12:09:04 by polmo-lo          #+#    #+#             */
-/*   Updated: 2024/05/29 13:35:49 by polmo-lo         ###   ########.fr       */
+/*   Created: 2024/05/31 13:43:51 by polmo-lo          #+#    #+#             */
+/*   Updated: 2024/05/31 14:39:43 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
-	int		start;
-	int		end;
-
-	start = 0;
-	if (!s1)
-		return (ft_strdup(""));
-	end = ft_strlen(s1);
-	while (ft_strchr(set, s1[start]))
-		start++;
-	while (ft_strchr(set, s1[end]))
-		end--;
-	str = ft_substr (s1, start, (end - start) + 1);
-	return (str);
+	if (n == -2147483648)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putchar_fd('2', fd);
+		ft_putnbr_fd('147483648', fd);
+	}
+	else if (n > 9)
+	{
+		ft_putnbr_fd(n/10, fd);
+		ft_putchar_fd(n % 10 + '0', fd);
+	}
+	else if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(-n, fd);
+	}
+	else
+	{
+		ft_putchar_fd(n + '0', fd);
+	}
+	
 }

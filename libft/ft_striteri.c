@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: polmo-lo <polmo-lo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/25 12:09:04 by polmo-lo          #+#    #+#             */
-/*   Updated: 2024/05/29 13:35:49 by polmo-lo         ###   ########.fr       */
+/*   Created: 2024/05/31 12:30:34 by polmo-lo          #+#    #+#             */
+/*   Updated: 2024/05/31 12:35:46 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+void ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	char	*str;
-	int		start;
-	int		end;
+	int	i;
 
-	start = 0;
-	if (!s1)
-		return (ft_strdup(""));
-	end = ft_strlen(s1);
-	while (ft_strchr(set, s1[start]))
-		start++;
-	while (ft_strchr(set, s1[end]))
-		end--;
-	str = ft_substr (s1, start, (end - start) + 1);
-	return (str);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		f(i, &s[i])
+		i++;
+	}
 }
