@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polmo-lo <polmo-lo@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: polmo-lo <polmo-lo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 13:57:32 by polmo-lo          #+#    #+#             */
-/*   Updated: 2024/05/15 19:42:14 by polmo-lo         ###   ########.fr       */
+/*   Updated: 2024/05/31 21:54:52 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,18 @@
 # define LIBFT_H
 
 # include <stdio.h>
-# include <string.h>
 # include <unistd.h>
 # include <stddef.h>
+# include <string.h>
+# include <stdlib.h>
+# include <stdint.h>
+# include <limits.h>
+
+typedef struct s_list
+{
+    void *content;
+    struct s_list *next;
+} t_list;
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -39,5 +48,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 int		ft_atoi(const char *str);
+
+
 
 #endif
