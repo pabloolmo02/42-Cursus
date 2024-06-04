@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: polmo-lo <polmo-lo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/31 22:09:28 by polmo-lo          #+#    #+#             */
-/*   Updated: 2024/06/04 16:37:55 by polmo-lo         ###   ########.fr       */
+/*   Created: 2024/06/04 16:41:58 by polmo-lo          #+#    #+#             */
+/*   Updated: 2024/06/04 18:37:34 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+static ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	t_list *new_node;
+	if (!lst || !del)
+		return;
+	del(lst->content);
+	free(lst);		
+}
+void ft_lstclear(t_list **lst, void (*del)(void *))
+{
+	t_list	*aux;
 
-	new_node = (t_list *)malloc(sizeof(t_list));
-	if (!new_node)
-		return (NULL);
-	new_node->content = content;
-	new_node->next = NULL;
-	return (new_node);
+	if (!lst || !del)
+		return;
+	while (*lst != NULL)
+	{
+		aux = (*lst)->next;
+		ft_lstdelone(aux, del)
+		*lst = aux;
+	}
+	*lst = NULL;
 }
